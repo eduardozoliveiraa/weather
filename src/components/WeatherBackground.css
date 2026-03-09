@@ -1,0 +1,216 @@
+.weather-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    transition: background 1.2s ease;
+}
+
+/* ── Conditions ──────────────────────────────────────────────── */
+.weather-bg--clear {
+    background: linear-gradient(160deg, #fef3c7 0%, #fed7aa 40%, #fbbf24 100%);
+}
+
+.weather-bg--night {
+    background: linear-gradient(160deg, #0f0c29 0%, #1a1a4e 50%, #24243e 100%);
+}
+
+.weather-bg--partly-cloudy {
+    background: linear-gradient(160deg, #bfdbfe 0%, #dbeafe 60%, #ede9fe 100%);
+}
+
+.weather-bg--cloudy {
+    background: linear-gradient(160deg, #e2e8f0 0%, #cbd5e1 60%, #94a3b8 100%);
+}
+
+.weather-bg--rain {
+    background: linear-gradient(160deg, #1e3a5f 0%, #1e40af 50%, #1d4ed8 100%);
+}
+
+.weather-bg--storm {
+    background: linear-gradient(160deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+}
+
+.weather-bg--snow {
+    background: linear-gradient(160deg, #e0f2fe 0%, #f0f9ff 50%, #f8fafc 100%);
+}
+
+.weather-bg--fog {
+    background: linear-gradient(160deg, #d1d5db 0%, #e5e7eb 60%, #f3f4f6 100%);
+}
+
+.weather-bg--default {
+    background: linear-gradient(160deg, #dbeafe 0%, #e0f2fe 60%, #ede9fe 100%);
+}
+
+/* Respect dark mode by softening orbs */
+[data-theme='dark'] .weather-bg--clear {
+    background: linear-gradient(160deg, #1c1302 0%, #3a2400 50%, #1f1700 100%);
+}
+
+[data-theme='dark'] .weather-bg--partly-cloudy,
+[data-theme='dark'] .weather-bg--cloudy,
+[data-theme='dark'] .weather-bg--default {
+    background: linear-gradient(160deg, #0a0f1e 0%, #0f172a 60%, #1e1b4b 100%);
+}
+
+[data-theme='dark'] .weather-bg--snow {
+    background: linear-gradient(160deg, #0f172a 0%, #1e293b 60%, #1e3a5f 100%);
+}
+
+[data-theme='dark'] .weather-bg--fog {
+    background: linear-gradient(160deg, #1e293b 0%, #334155 60%, #475569 100%);
+}
+
+/* ── Orbs ────────────────────────────────────────────────────── */
+.bg-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.45;
+    animation: float-orb 12s ease-in-out infinite;
+}
+
+.bg-orb-1 {
+    width: 600px;
+    height: 600px;
+    top: -200px;
+    left: -150px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.35), transparent 70%);
+    animation-delay: 0s;
+}
+
+.bg-orb-2 {
+    width: 500px;
+    height: 500px;
+    bottom: -100px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.25), transparent 70%);
+    animation-delay: -4s;
+}
+
+.bg-orb-3 {
+    width: 350px;
+    height: 350px;
+    top: 40%;
+    left: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
+    animation-delay: -8s;
+}
+
+@keyframes float-orb {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -20px) scale(1.05);
+    }
+
+    66% {
+        transform: translate(-20px, 15px) scale(0.97);
+    }
+}
+
+/* ── Rain ────────────────────────────────────────────────────── */
+.rain-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.raindrop {
+    position: absolute;
+    top: -20px;
+    width: 1.5px;
+    background: linear-gradient(to bottom, transparent, rgba(147, 197, 253, 0.7));
+    border-radius: 2px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(105vh);
+        opacity: 0;
+    }
+}
+
+/* ── Snow ────────────────────────────────────────────────────── */
+.snow-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.snowflake {
+    position: absolute;
+    top: -30px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    animation: snowfall linear infinite;
+    user-select: none;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-20px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ── Stars ───────────────────────────────────────────────────── */
+.stars-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle ease-in-out infinite;
+    animation-duration: 2.5s;
+}
+
+@keyframes twinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}

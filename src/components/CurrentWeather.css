@@ -1,0 +1,160 @@
+.current-weather,
+.current-weather-skeleton {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Location row */
+.cw-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cw-pin {
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.cw-city {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cw-greeting {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-top: -12px;
+}
+
+/* Hero */
+.cw-hero {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.cw-icon {
+    flex-shrink: 0;
+}
+
+.cw-temp-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.cw-temp {
+    display: flex;
+    align-items: flex-start;
+    line-height: 1;
+    gap: 2px;
+}
+
+.temp-value {
+    font-size: 4.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.temp-unit {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+.cw-desc {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+.cw-minmax {
+    display: flex;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.cw-max,
+.cw-min {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    border-radius: 99px;
+    padding: 3px 10px;
+}
+
+.cw-max {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.cw-min {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.1);
+}
+
+/* Stats */
+.cw-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 16px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+}
+
+.cw-stat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    padding: 0 12px;
+}
+
+.cw-stat:first-child {
+    padding-left: 0;
+}
+
+.cw-stat-icon {
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stat-value {
+    display: block;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.cw-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--glass-border);
+    flex-shrink: 0;
+}

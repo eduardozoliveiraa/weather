@@ -1,0 +1,107 @@
+.hourly-container {
+    padding: 24px;
+}
+
+.hourly-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.hourly-scroll {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--glass-border) transparent;
+}
+
+.hourly-scroll::-webkit-scrollbar {
+    height: 4px;
+}
+
+.hourly-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.hourly-scroll::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 4px;
+}
+
+.hourly-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 70px;
+    padding: 14px 10px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid var(--glass-border);
+    cursor: default;
+    transition: background 0.2s, transform 0.2s;
+    animation: fadeInUp 0.5s both;
+}
+
+.hourly-card:hover {
+    background: var(--card-hover);
+    transform: translateY(-4px);
+}
+
+.hourly-time {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.hourly-pop {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #60a5fa;
+}
+
+.hourly-icon {
+    line-height: 1;
+}
+
+.hourly-bar-wrap {
+    display: flex;
+    align-items: flex-end;
+    height: 80px;
+    width: 6px;
+}
+
+.hourly-bar {
+    width: 6px;
+    border-radius: 3px;
+    background: linear-gradient(to top, var(--accent), var(--accent-light));
+    min-height: 12px;
+    transition: height 0.6s ease;
+}
+
+.hourly-temp {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* Skeleton card */
+.hourly-card-skeleton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 70px;
+    padding: 14px 10px;
+    border-radius: 18px;
+    background: var(--skeleton-base);
+}
