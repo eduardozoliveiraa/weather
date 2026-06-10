@@ -137,5 +137,3 @@ Para validar o resultado localmente:
 npm run preview
 ```
 
-O conteúdo de `dist/` pode ser publicado em serviços de hospedagem estática. Configure `VITE_OPENWEATHER_API_KEY` no ambiente de build da plataforma.
-
