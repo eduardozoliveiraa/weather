@@ -139,5 +139,3 @@ npm run preview
 
 O conteúdo de `dist/` pode ser publicado em serviços de hospedagem estática. Configure `VITE_OPENWEATHER_API_KEY` no ambiente de build da plataforma.
 
-> Como este é um projeto frontend, variáveis prefixadas com `VITE_` são incorporadas ao bundle e podem ser visualizadas pelo usuário. Restrinja o uso da chave no provedor quando possível; para ocultá-la de fato, as chamadas precisam passar por um backend.
-
